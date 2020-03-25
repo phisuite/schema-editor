@@ -7,8 +7,8 @@ import (
 
 func main() {
 	api := grpc.New()
-	schema.RegisterEventAPIServer(api.Server, &eventServer{})
-	schema.RegisterEntityAPIServer(api.Server, &entityServer{})
-	schema.RegisterProcessAPIServer(api.Server, &processServer{})
+	schema.RegisterEventWriteAPIServer(api.Server, &eventServer{})
+	schema.RegisterEntityWriteAPIServer(api.Server, &entityServer{})
+	schema.RegisterProcessWriteAPIServer(api.Server, &processServer{})
 	api.Start()
 }
